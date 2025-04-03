@@ -1,0 +1,71 @@
+#Ask the user to input strings and stop when an empty string is entered and print the last string entered
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SecondClass {
+	
+	public static void main(String[] args) {
+		ArrayList <String> wordList = new ArrayList<>();
+		System.out.println("Enter the String");
+		Scanner input = new Scanner(System.in);
+		
+		while(true) {
+			
+			String check = input.nextLine();
+			wordList.add(check);
+			int count = wordList.size();
+			if (check == "") {
+				System.out.println(wordList.get(count-2));
+				break;
+			}
+			
+		}
+}
+
+
+#Ask the user to input integers and stop when -1 is entered and print the greatest of the numbers
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SecondClass {
+	
+	public static void main(String[] args) {
+		ArrayList <Integer> numList = new ArrayList<>();
+		System.out.println("Enter the number");
+		Scanner input = new Scanner(System.in);
+		
+		while(true) {
+			
+			int check = Integer.valueOf(input.nextLine());
+			numList.add(check);
+			if (check == -1) {
+				
+				break;
+			}
+		}
+						
+		int greatest = numList.get(0);
+
+			for(int i = 0; i < numList.size(); i++) {
+			    int number = numList.get(i);
+			    if (greatest < number) {
+			    	greatest = number;
+			    }
+			}
+
+			System.out.println("The greatest number: " + greatest);
+			
+		}
+}
+		
+		
+	    
+	    
+	    
+	
