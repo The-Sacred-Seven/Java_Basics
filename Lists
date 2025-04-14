@@ -101,6 +101,45 @@ public class SecondClass {
 		
 }
 }
+
+#Print the sum of values from the list in given limits
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SecondClass {
+	
+	public static int printNumbersInRange(ArrayList<Integer> numbers, int lowerLimit, int upperLimit) {
+		int sum = 0;
+	    for (int number=lowerLimit; number>=lowerLimit && number<upperLimit; number++) 
+	    	sum = sum + numbers.get(number);
+	   	    return sum;
+   		
+}
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> numbers = new ArrayList<>();
+		numbers.add(3);
+		numbers.add(2);
+		numbers.add(6);
+		numbers.add(-1);
+		numbers.add(5);
+		numbers.add(1);
+		numbers.add(3);
+		numbers.add(2);
+		numbers.add(6);
+		numbers.add(-1);
+		numbers.add(5);
+		numbers.add(1);
+		
+		System.out.println(numbers);
+		System.out.println(printNumbersInRange(numbers, 3, 10));
+		
+}
+}
 		
 		
 	    
