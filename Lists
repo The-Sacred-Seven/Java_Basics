@@ -63,6 +63,44 @@ public class SecondClass {
 			
 		}
 }
+
+#Print the list between lower limit and upper limit provided 
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SecondClass {
+	
+	public static void printNumbersInRange(ArrayList<Integer> numbers, int lowerLimit, int upperLimit) {
+	    for (int number=lowerLimit; number>=lowerLimit && number<upperLimit; number++) {
+	    	System.out.println(numbers.get(number));
+        
+        }
+   		
+}
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> numbers = new ArrayList<>();
+		numbers.add(3);
+		numbers.add(2);
+		numbers.add(6);
+		numbers.add(-1);
+		numbers.add(5);
+		numbers.add(1);
+		numbers.add(3);
+		numbers.add(2);
+		numbers.add(6);
+		numbers.add(-1);
+		numbers.add(5);
+		numbers.add(1);
+
+		printNumbersInRange(numbers, 3, 10);
+		
+}
+}
 		
 		
 	    
