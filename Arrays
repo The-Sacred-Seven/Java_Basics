@@ -37,3 +37,52 @@ public class SecondClass {
 		
 }
 }
+
+#Find index of an element with simple loop
+
+package the_Seven;
+
+import java.util.Scanner;
+
+import java.util.Arrays;
+
+public class SecondClass {
+	
+
+	public static void main(String[] args) {
+		
+		int[] numbers= new int[10];
+		numbers[0] = 42;
+		numbers[1] = 13;
+		numbers[2] = 12;
+		numbers[3] = 7;
+		numbers[4] = 1;
+		numbers[5] = 43;
+		numbers[6] = 73;
+		numbers[7] = 92;
+		numbers[8] = 77;
+		numbers[9] = 10;
+		
+		System.out.println("search for?");
+		
+		Scanner input = new Scanner(System.in);
+		int search = Integer.valueOf(input.nextLine());
+		
+		 int index = -1;
+	     for (int i=0; i<numbers.length;i++)
+	    	 if (search==numbers[i]) {
+	    		 index=i;
+	    		 break;
+	    		 }
+	    if (index==-1) {
+	    	System.out.println(search+" not found at any index");
+	    }
+	    else {
+	    	System.out.println(search+ " found at index "+ index);
+	    }
+	     
+	    	 
+			
+		
+	}
+}
