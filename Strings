@@ -1,1 +1,29 @@
+#Compare strings
+package the_Seven;
+
+import java.util.Scanner;
+
+import java.util.Arrays;
+
+public class SecondClass {
+	
+	public static void main(String[] args) {
+		Scanner string = new Scanner(System.in);
+		System.out.println("Enter the string ");
+		String username = string.nextLine();
+		String password = string.nextLine();
+		
+		if (username.equals("alex") && password.equals("sunshine")) {
+			System.out.println("You have successfully logged in");
+		}
+		else if (username.equals("emma") && password.equals("haskell")) {
+			System.out.println("You have successfully logged in");
+		}
+		else {
+			System.out.println("Your username or password is incorrect");
+		}
+	}
+		
+}
+
 
