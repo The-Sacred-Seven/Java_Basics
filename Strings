@@ -64,8 +64,52 @@ public class SecondClass {
 		System.out.println("Oldest one is of " + oldestPerson(list) + " age");
 		
 	}
+}
+
+#Print the name of the oldest person and their age
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+public class SecondClass {
 	
+	public static int oldestAge(List<Integer> old) {
+		int one=old.get(0);
+		for(int i:old)
+			if(i>one) {
+				one=i;
+				}
+		return one;
+		
+	}
 	
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		List<Integer> agelist = new ArrayList<>();
+		List<String> namelist = new ArrayList<>();
+		
+		
+		while (true) {
+		    String input = reader.nextLine();
+		    if (input.equals("")) {
+		        break;
+		    }
+
+		    String[] parts = input.split(",");
+		    namelist.add(parts[0]);
+		    agelist.add(Integer.valueOf(parts[1]));
+		    
+		    
+		}
+		int age= oldestAge(agelist);
+		int index=agelist.indexOf(age);
+		System.out.println("Oldest person is " + namelist.get(index)+ " and he/she is "+ age);
+
+		
+	}
 }
 
 
