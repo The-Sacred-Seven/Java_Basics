@@ -26,4 +26,46 @@ public class SecondClass {
 		
 }
 
+#Find the oldest person from the user input
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+public class SecondClass {
+	
+	public static int oldestPerson(List<Integer> old) {
+		int one=old.get(0);
+		for(int i:old)
+			if(i>one) {
+				one=i;
+			}
+		return one;
+	}
+	
+	public static void main(String[] args) {
+		Scanner reader = new Scanner(System.in);
+		List<Integer> list = new ArrayList<>();
+		
+		
+		while (true) {
+		    String input = reader.nextLine();
+		    if (input.equals("")) {
+		        break;
+		    }
+
+		    String[] parts = input.split(",");
+		    list.add(Integer.valueOf(parts[1]));
+		    
+		    
+		}
+		System.out.println("Oldest one is of " + oldestPerson(list) + " age");
+		
+	}
+	
+	
+}
+
 
