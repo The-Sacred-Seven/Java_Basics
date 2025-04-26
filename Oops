@@ -1,0 +1,28 @@
+#Create a class Product and Print it's variables
+
+package the_Seven;
+
+public class Product {
+	double price;
+	int quantity;
+	String name;
+
+	public Product(String initialName, double initialPrice, int initialQuantity) {
+		this.price=initialPrice;
+		this.quantity=initialQuantity;
+		this.name=initialName;
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Product bananaPrd = new Product("Banana", 1.1, 13);
+		
+		bananaPrd.printProduct();
+
+	}
+	
+	public void printProduct() {
+		System.out.println(name + ", price "+ price + " ," + quantity + " pcs");
+	}
+
+}
