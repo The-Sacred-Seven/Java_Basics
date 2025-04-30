@@ -26,3 +26,62 @@ public class Product {
 	}
 
 }
+
+#Get username from input, stop when it is empty string. Print the date and time when the user was created
+
+package the_Seven;
+
+import java.time.LocalTime;
+import java.time.LocalDate;
+import java.util.*;
+
+public class Items {
+	
+	String name;
+	LocalTime time;
+	LocalDate date;
+
+	public Items(String username) {
+		this.name=username;
+		this.time = LocalTime.now();
+		this.date = LocalDate.now();
+	}
+	
+	public void items(String username){
+		System.out.println(this.name);
+		System.out.println(this.time);
+	}
+	
+	public String toString() {
+        return this.name + " is created on " + this.date + " at " + this.time;
+    }
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<Items> useritems = new ArrayList<>();
+		
+		
+
+		// Read the names of persons from the user
+		while (true) {
+			System.out.println("Enter a name, empty will stop: ");
+		    String name = scanner.nextLine();
+		    
+		    if (name.isEmpty()) {
+		        break;
+		    }
+
+		    useritems.add(new Items(name));
+		}
+		
+		for (Items person: useritems) {
+		    System.out.println(person);
+		
+
+	}
+
+
+}
+}
+
