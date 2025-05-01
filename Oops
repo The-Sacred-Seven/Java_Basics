@@ -85,3 +85,51 @@ public class Items {
 }
 }
 
+#Read first name and last name from the user and print if first name is empty
+
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class PersonalInformation {
+	String firstName;
+	String lastName;
+	int ID;
+
+	public PersonalInformation(String firstName, String lastName) {
+		this.firstName=firstName;
+		this.lastName=lastName;
+	}
+	
+	void display() {
+		System.out.println(this.firstName + " " + this.lastName);
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		ArrayList<PersonalInformation> PI = new ArrayList<>();
+		
+		while(true) {
+			System.out.println("Enter your first name");
+			String fname = scanner.nextLine();
+			
+			if(fname.isEmpty()) {
+				break;
+			}
+			
+			System.out.println("Enter your last name");
+			String lname = scanner.nextLine();
+			
+			PI.add(new PersonalInformation(fname,lname));
+			
+		}
+		
+		for(PersonalInformation i:PI) {
+			i.display();
+		}
+
+	}
+
+}
+
