@@ -133,3 +133,81 @@ public class PersonalInformation {
 
 }
 
+#Get Title, pages and year from the user input and ask for what they want to print
+package the_Seven;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Books {
+	String title;
+	int pages;
+	int year;
+
+	public Books(String title, int pages, int year) {
+		this.title=title;
+		this.pages=pages;
+		this.year=year;
+		
+	}
+	
+	void everything() {
+		System.out.println(this.title + " " + this.pages + " " + this.year);
+	}
+	
+	void title() {
+		System.out.println(this.title);
+	}
+	void pages() {
+		System.out.println(this.pages);
+	}
+	void years() {
+		System.out.println(this.year);
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		ArrayList <Books> books = new ArrayList<>();
+		
+		while(true) {
+			System.out.println("Enter the Title");
+			String btitle = input.nextLine();
+			
+			if(btitle.isEmpty()) {
+				break;
+			}
+			
+			System.out.println("Enter the size of the title");
+			int tpages = Integer.valueOf(input.nextLine());
+			
+			System.out.println("Enter the published year of the title");
+			int pyear = Integer.valueOf(input.nextLine());
+			
+			books.add(new Books(btitle, tpages, pyear));
+			
+		}
+		
+		System.out.println("What do you want to print");
+		String print = input.nextLine();
+			
+		for (Books i:books) {
+			if(print.equals("pages")) {
+				i.pages();
+			}
+			else if(print.equals("year")) {
+				i.years();
+			}
+			else if(print.equals("title")) {
+				i.title();
+			}
+			else if(print.equals("everything")){
+				i.everything();
+			}
+			
+		}
+		
+	}
+
+}
+
