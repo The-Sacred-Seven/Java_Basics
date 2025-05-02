@@ -40,3 +40,55 @@ public class ReadFile {
 	}
 
 }
+#read numbers from two files and ask user for inner and outer bounds to print the count of numbers between bounds
+package the_Seven;
+
+import java.nio.file.Paths;
+import java.util.*;
+
+public class Numbers {
+
+	
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> lines = new ArrayList<>();
+		System.out.println("Enter the file name");
+		Scanner input = new Scanner(System.in);
+		String filename = input.nextLine();
+		
+		try (Scanner scanner = new Scanner(Paths.get("/Users", "saikr", "Downloads",filename))){
+			
+			while(scanner.hasNextLine()) {
+				lines.add(Integer.valueOf(scanner.nextLine()));
+			}
+			
+		}
+		
+		catch(Exception e) {
+			System.out.println("Reading the file "+ filename + " failed");
+			
+		}
+		
+		System.out.println("Enter the inner and outer bound");
+		int inner = Integer.valueOf(input.nextLine());
+		int outer = Integer.valueOf(input.nextLine());
+		int count=0;
+		
+		for (int i=0; i<lines.size(); i++) {
+			if(lines.get(i)>inner && lines.get(i)<outer) {
+				count+=1;
+			}
+				
+			
+				
+			}
+		
+		System.out.println(count);
+		}
+		
+		
+		
+
+	}
+
