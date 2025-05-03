@@ -1,0 +1,45 @@
+#Constructor Overload
+package the_Seven;
+
+public class Product {
+	String name;
+	String location;
+	int weight;
+
+	public Product(String name) {
+		this(name, 1, "shelf");
+	}
+	
+	public Product(String name, String location) {
+		this(name, 1, location);
+	}
+	
+	public Product(String name, int weight) {
+		this.name=name;
+		this.weight=1;
+		this.location="shelf";
+		
+	}
+	
+	public Product(String name, int weight, String location) {
+		this.name=name;
+		this.weight=weight;
+		this.location=location;
+	}
+	
+	public String toString() {
+		return this.name + "(" + this.weight + "kg)" + "can be found from the " + this.location;
+	}
+
+	public static void main(String[] args) {
+		Product tapeMeasure = new Product("Tape measure");
+		Product plaster = new Product("Plaster", "home improvement section");
+		Product tyre = new Product("Tyre", 5);
+
+		System.out.println(tapeMeasure);
+		System.out.println(plaster);
+		System.out.println(tyre);
+
+	}
+
+}
