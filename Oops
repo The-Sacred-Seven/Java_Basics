@@ -313,3 +313,37 @@ public class Timer {
 
 }
 
+#Calculate Target Heart Rate
+
+package the_Seven;
+
+public class Fitbyte {
+	int age;
+	int restingHeartRate;
+
+	public Fitbyte(int age, int restingHeartRate) {
+		this.age=age;
+		this.restingHeartRate=restingHeartRate;
+	}
+	
+	double targetHeartRate(double percentageOfMaximum) {
+		double maxHeartRate= 206.3-(0.711 * this.age);
+		double formula = ((maxHeartRate - this.restingHeartRate) * (percentageOfMaximum) + this.restingHeartRate);
+		return formula;
+		
+	}
+
+	public static void main(String[] args) {
+		Fitbyte assistant = new Fitbyte(30, 60);
+
+		double percentage = 0.5;
+
+		while (percentage < 1.0) {
+		    double target = assistant.targetHeartRate(percentage);
+		    System.out.println("Target " + (percentage * 100) + "% of maximum: " + target);
+		    percentage = percentage + 0.1;
+		}
+
+	}
+
+}
