@@ -211,3 +211,105 @@ public class Books {
 
 }
 
+#create a Class to print hours, minutes and seconds using OOps
+
+package the_Seven;
+
+public class ClockHand {
+	private int value;
+	private int limit;
+
+	public ClockHand(int limit) {
+		this.value=0;
+		this.limit=limit;
+		
+	}
+	
+	public void advance() {
+		this.value+=1;
+		
+		if (this.value>=this.limit) {
+			this.value=0;
+		}
+	}
+	
+	public int value() {
+		return this.value;
+	}
+	
+	public String toString() {
+		if(this.value<10) {
+			return "0" + this.value;
+		}
+		
+		return ""+this.value;
+	}
+	
+	public static void main(String[] args) {
+		ClockHand hours = new ClockHand(24);
+		ClockHand minutes = new ClockHand(60);
+		ClockHand seconds = new ClockHand(60);
+
+		while (true) {
+		    // 1. Printing the time
+		    System.out.println(hours + ":" + minutes + ":" + seconds);
+
+		    // 2. Advancing the second hand
+		    seconds.advance();
+
+		    // 3. Advancing the other hands when required
+		    if (seconds.value() == 0) {
+		        minutes.advance();
+
+		        if (minutes.value() == 0) {
+		            hours.advance();
+		        }
+		    }
+		}
+	}
+}
+
+package the_Seven;
+
+public class Timer {
+	private ClockHand seconds;
+	private ClockHand hseconds;
+	
+	
+
+	public Timer() {
+		this.seconds=new ClockHand(60);
+		this.hseconds=new ClockHand(100);
+		
+	}
+	
+	public void advance() {
+		hseconds.advance();
+		
+		
+		if(hseconds.value()==100) {
+			seconds.advance();
+		}
+	}
+	
+	public String toString() {
+		return seconds+ ":" + hseconds;
+	}
+	
+	public static void main(String[] args) {
+		Timer timer = new Timer();
+
+		while (true) {
+		    System.out.println(timer);
+		    timer.advance();
+
+		    try {
+		        Thread.sleep(10);
+		    } catch (Exception e) {
+
+		    }
+		}
+	}
+
+}
+
