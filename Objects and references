@@ -154,3 +154,63 @@ public class Apartment {
 	}
 
 }
+
+#Read input from the user and print the list if the identifier or name is empty
+
+package the_Seven;
+import java.util.*;
+
+public class Identifier {
+	ArrayList <String> identifier;
+	ArrayList <String> name;
+
+	public Identifier(ArrayList <String>identifier, ArrayList <String> name) {
+		
+		this.identifier=identifier;
+		this.name=name;
+		
+		System.out.println("==Items==");
+		
+		for (int i=0; i<name.size();i++) {
+			
+				System.out.println(identifier.get(i) + ": " + name.get(i));
+			
+	}
+	}
+	
+	public static void main(String[] args) {
+		ArrayList <String> identifiers = new ArrayList<>();
+		ArrayList <String> names = new ArrayList<>();
+		
+		
+		while(true) {
+			
+			System.out.println("Enter the Identifier");
+			Scanner input = new Scanner(System.in);
+			
+			String ID = input.nextLine();
+			if (ID.isEmpty()) {
+				
+				break;
+			}
+			identifiers.add(ID);
+			
+			System.out.println("Enter the name");
+			String name = input.nextLine();
+			if (name.isEmpty()) {
+				
+				break;
+			}
+			
+			
+			names.add(name);
+			
+		}
+		
+		 Identifier ID = new Identifier(identifiers, names);
+	
+		}
+	
+		
+	}
+
